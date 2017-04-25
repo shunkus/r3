@@ -1,0 +1,47 @@
+import React, {Component} from 'react';
+import {Provider} from 'react-intl-redux';
+import {createStore, applyMiddleware} from 'redux';
+import {addLocaleData} from 'react-intl';
+import {Router, Route, hashHistory} from 'react-router';
+
+import en from 'react-intl/locale-data/en';
+import ja from 'react-intl/locale-data/ja';
+import * as locales from '../../locales';
+import reducers from '../../reducers';
+
+import Index from './index';
+
+// Locale
+addLocaleData([...en, ...ja]);
+let language = (navigator.languages && navigator.languages[0]) ||
+    navigator.language ||
+    navigator.userLanguage;
+const languages = ['en', 'ja'];
+if(languages.indexOf(language) == -1) {
+    language = 'en';
+}
+const initialState = {
+    intl: {
+        defaultLocale: 'en',
+        locale: language,
+        messages: locales[language]
+    }
+}
+
+// Routing
+const middlewares = [];
+export const store = applyMiddleware(...middlewares)(createStore)(reducers, initialState);
+
+export default class App extends Component {
+    render() {
+        return (
+            <Provider store={store}>
+                <Router history={hashHistory}>
+                    <Route path="/" component={Index} />
+                    <Route path="/other" component={Index} />
+                </Router>
+            </Provider>
+        );
+    }
+}
+
