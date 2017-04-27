@@ -95,6 +95,14 @@ react-native run-android
 npm test
 ```
 
+#### Note
+
+if you got an error for testing, you have to install jest globally
+
+```
+npm install jest -g
+```
+
 
 ### Build for Web
 
