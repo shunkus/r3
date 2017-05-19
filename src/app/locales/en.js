@@ -7,5 +7,8 @@ const en = {
     'how.to.open.dev.setting.ios': 'Cmd+D or shake for dev menu',
     'how.to.open.dev.setting.android': 'Shake or press menu button for dev menu',
     'change.locale.to.ja': '日本語に変更',
+    'show.other.component': 'Show other component',
+    'this.is.other.component': 'This is other component.',
+    'back.to.index': 'Back to index page',
 };
 export default en;

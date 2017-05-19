@@ -4,18 +4,15 @@ import {FormattedMessage} from 'react-intl';
 import {Link} from 'react-router';
 import * as actions from '../../actions';
 
-import Instructions from '../components/instructions';
-
-class Index extends Component {
+class Other extends Component {
     render() {
         return (
             <div>
-                <p style={styles.welcome}>
-                    <FormattedMessage id="welcome.to.r3"/>
+                <p style={styles.title}>
+                    <FormattedMessage id="this.is.other.component"/>
                 </p>
-                <Instructions/>
-                <Link to="/other" style={styles.link}>
-                    <FormattedMessage id="show.other.component"/>
+                <Link to="/" style={styles.link}>
+                    <FormattedMessage id="back.to.index"/>
                 </Link>
             </div>
         );
@@ -23,7 +20,7 @@ class Index extends Component {
 }
 
 const styles = {
-    welcome: {
+    title: {
         fontSize: 20,
         textAlign: 'center',
         margin: 10,
@@ -31,10 +28,9 @@ const styles = {
     link: {
         display: 'block',
         textAlign: 'center',
-        margin: 10,
     }
 };
 
 export default connect((state) => {
     return state;
-}, actions)(Index);
+}, actions)(Other);

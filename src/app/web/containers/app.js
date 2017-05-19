@@ -10,6 +10,7 @@ import * as locales from '../../locales';
 import reducers from '../../reducers';
 
 import Index from './index';
+import Other from './other';
 
 // Locale
 addLocaleData([...en, ...ja]);
@@ -38,7 +39,7 @@ export default class App extends Component {
             <Provider store={store}>
                 <Router history={hashHistory}>
                     <Route path="/" component={Index} />
-                    <Route path="/other" component={Index} />
+                    <Route path="/other" component={Other} />
                 </Router>
             </Provider>
         );
