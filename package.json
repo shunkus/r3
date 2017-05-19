@@ -14,7 +14,7 @@
     "react-dom": "16.0.0-alpha.6",
     "react-intl": "^2.2.3",
     "react-intl-redux": "^0.4.1",
-    "react-native": "0.43.3",
+    "react-native": "0.44.0",
     "react-native-router-flux": "3.38.0",
     "react-redux": "^5.0.4",
     "react-router": "^3.0.5",
