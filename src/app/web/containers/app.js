@@ -2,7 +2,10 @@ import React, {Component} from 'react';
 import {Provider} from 'react-intl-redux';
 import {createStore, applyMiddleware} from 'redux';
 import {addLocaleData} from 'react-intl';
-import {Router, Route, hashHistory} from 'react-router';
+import {
+    BrowserRouter as Router,
+    Route,
+} from 'react-router-dom';
 
 import en from 'react-intl/locale-data/en';
 import ja from 'react-intl/locale-data/ja';
@@ -37,9 +40,11 @@ export default class App extends Component {
     render() {
         return (
             <Provider store={store}>
-                <Router history={hashHistory}>
-                    <Route path="/" component={Index} />
-                    <Route path="/other" component={Other} />
+                <Router>
+                    <div>
+                        <Route exact path="/" component={Index} />
+                        <Route path="/other" component={Other} />
+                    </div>
                 </Router>
             </Provider>
         );
