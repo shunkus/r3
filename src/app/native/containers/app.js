@@ -1,9 +1,13 @@
 import React, {Component} from 'react';
-import {NativeModules, Platform, Text} from 'react-native';
+import {NativeModules, Platform, Text, View, StyleSheet} from 'react-native';
 import {Provider} from 'react-intl-redux';
 import {createStore, applyMiddleware} from 'redux';
 import {addLocaleData} from 'react-intl';
-import {Scene, Router} from 'react-native-router-flux';
+import {
+    NativeRouter,
+    Route,
+    Link
+} from 'react-router-native';
 
 // for android
 global.Intl = "";
@@ -40,17 +44,28 @@ const middlewares = [];
 export const store = applyMiddleware(...middlewares)(createStore)(reducers, initialState);
 
 import Index from './index';
+import Other from './other';
 
 export default class App extends Component {
     render() {
         return (
             <Provider store={store}>
-                <Router>
-                    <Scene key="root">
-                        <Scene key="index" component={Index} initial={true} title="R3" />
-                    </Scene>
-                </Router>
+                <NativeRouter>
+                    <View style={styles.container}>
+                        <Route exact path="/" component={Index}/>
+                        <Route exact path="/other" component={Other}/>
+                    </View>
+                </NativeRouter>
             </Provider>
         );
     }
 }
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#F5FCFF',
+    },
+});

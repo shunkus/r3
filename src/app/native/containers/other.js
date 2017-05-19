@@ -11,17 +11,16 @@ import {Link} from 'react-router-native';
 import * as actions from '../../actions/index';
 import Instructions from '../components/instructions';
 
-class Index extends Component {
+class Other extends Component {
     render() {
         return (
             <View style={styles.container}>
                 <Text style={styles.welcome}>
-                    {this.props.intl.messages['welcome.to.r3']}
+                    {this.props.intl.messages['this.is.other.component']}
                 </Text>
-                <Instructions/>
-                <Link to="/other">
+                <Link to="/">
                     <Text style={styles.link}>
-                        {this.props.intl.messages['show.other.component']}
+                        {this.props.intl.messages['back.to.index']}
                     </Text>
                 </Link>
             </View>
@@ -47,4 +46,4 @@ const styles = StyleSheet.create({
 
 export default connect((state) => {
     return state;
-}, actions)(Index);
+}, actions)(Other);
