@@ -131,7 +131,7 @@ npm install react-native-cli -g
 - redux
 - react-intl
 - react-router
-- react-router-flux
+- react-router-native
 
 ### FYI
 
