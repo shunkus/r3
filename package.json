@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start-native": "node node_modules/react-native/local-cli/cli.js start",
-    "test": "jest",
+    "test": "./node_modules/.bin/jest",
     "build-web": "./node_modules/.bin/webpack --config webpack.config.js --progress --colors  --env production",
     "build-web-dev": "./node_modules/.bin/webpack --config webpack.config.js --progress --colors  --env development",
     "start-web-dev": "./node_modules/.bin/webpack-dev-server --config webpack.config.js --progress --env development"
@@ -31,7 +31,7 @@
     "clean-webpack-plugin": "^0.1.16",
     "copy-webpack-plugin": "^4.0.1",
     "html-webpack-plugin": "^2.28.0",
-    "jest": "20.0.3",
+    "jest": "20.0.4",
     "react-test-renderer": "16.0.0-alpha.6",
     "webpack": "^2.4.1",
     "webpack-dev-server": "^2.4.2"
@@ -40,6 +40,9 @@
     "preset": "react-native",
     "setupFiles": [
       "./jest/setup.js"
+    ],
+    "transformIgnorePatterns": [
+      "node_modules/(?!react-native|react-router-native)/"
     ]
   }
 }
