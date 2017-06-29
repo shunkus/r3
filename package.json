@@ -19,7 +19,7 @@
     "react-router": "4.1.1",
     "react-router-dom": "4.1.1",
     "react-router-native": "4.1.1",
-    "redux": "^3.7.0"
+    "redux": "3.7.1"
   },
   "devDependencies": {
     "babel-jest": "19.0.0",
